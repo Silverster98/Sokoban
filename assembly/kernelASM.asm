@@ -7,16 +7,11 @@ include windows.inc
 .data 
 map_w equ 8
 map_h equ 8
-maps sbyte  'wwwwwwwwweeeeeewwdeeedewwbepebewweeeewwwwdebeweeweeeeweewwwwwwee',\
+maps sbyte  'eeeeeeeeewwwwwweeweeedweewewbeweewpeeeweeweeeeweewwwwwweeeeeeeee',\
+            'wwwwwwwwweeeeeewwdeeedewwbepebewweeeewwwwdebeweeweeeeweewwwwwwee',\
 			'eeeeeeeeeeewwwwwwwwwpeewweebodewweeeeewwweewwwwwwwwweeeeeeeeeeee',\
 			'wwwwwwwwweeweeewwebbodewwedeedewwedobbpwweeeweewwwwwwwwweeeeeeee',\
-			'ewwwwweewwweewweweebeewwwpwbwewwwedbdedwwwweeeewewweewwweewwwwwe',\
-			'wwwwwwwwwwwwwwww',\
-			'wweeeeww',\
-			'wweeeeww',\
-			'wwpbdeww',\
-			'wweeeeww',\
-			'wwwwwwwwwwwwwwww',0
+			'ewwwwweewwweewweweebeewwwpwbwewwwedbdedwwwweeeewewweewwweewwwwwe',0
 
 
 .code
