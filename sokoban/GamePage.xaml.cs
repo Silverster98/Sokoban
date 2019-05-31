@@ -23,19 +23,19 @@ namespace Sokoban
 
     public partial class GamePage : Page
     {
-        [DllImport("../../asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/kernelASM.dll")]
         public static extern void loadMap(int count, byte[] now);
 
-        [DllImport("../../asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/kernelASM.dll")]
         public static extern int moveRight(byte[] now);
 
-        [DllImport("../../asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/kernelASM.dll")]
         public static extern int moveLeft(byte[] now);
 
-        [DllImport("../../asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/kernelASM.dll")]
         public static extern int moveUp(byte[] now);
 
-        [DllImport("../../asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/kernelASM.dll")]
         public static extern int moveDown(byte[] now);
 
         public int Level;
@@ -75,7 +75,7 @@ namespace Sokoban
                 //保留老数组函数
                 Copy(copyArray, currentArray);
 
-                int Status = moveUp(currentArray);
+                Status = moveUp(currentArray);
                 UpdateGameUI(currentArray, copyArray);
 
                 PasstoNextPage();
@@ -88,7 +88,7 @@ namespace Sokoban
                 //保留老数组函数
                 Copy(copyArray, currentArray);
 
-                int Status = moveDown(currentArray);
+                Status = moveDown(currentArray);
                 UpdateGameUI(currentArray, copyArray);
 
                 PasstoNextPage();
@@ -101,7 +101,7 @@ namespace Sokoban
                 //保留老数组函数
                 Copy(copyArray, currentArray);
 
-                int Status = moveLeft(currentArray);
+                Status = moveLeft(currentArray);
                 UpdateGameUI(currentArray, copyArray);
 
                 PasstoNextPage();

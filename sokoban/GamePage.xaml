@@ -10,7 +10,7 @@
       PreviewKeyDown="Page_PreviewKeyDown">
 
 
-    <Grid>
+    <Grid Background="#42586A">
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="300"/>
