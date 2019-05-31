@@ -23,19 +23,19 @@ namespace Sokoban
 
     public partial class GamePage : Page
     {
-        [DllImport("C:/Users/罗楠/source/repos/Sokoban/asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/asm.dll")]
         public static extern void loadMap(int count, byte[] now);
 
-        [DllImport("C:/Users/罗楠/source/repos/Sokoban/asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/asm.dll")]
         public static extern int moveRight(byte[] now);
 
-        [DllImport("C:/Users/罗楠/source/repos/Sokoban/asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/asm.dll")]
         public static extern int moveLeft(byte[] now);
 
-        [DllImport("C:/Users/罗楠/source/repos/Sokoban/asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/asm.dll")]
         public static extern int moveUp(byte[] now);
 
-        [DllImport("C:/Users/罗楠/source/repos/Sokoban/asm_kernel/asm.dll")]
+        [DllImport("../../asm_kernel/asm.dll")]
         public static extern int moveDown(byte[] now);
 
         public int Level;
@@ -78,19 +78,8 @@ namespace Sokoban
                 int Status = moveUp(currentArray);
                 UpdateGameUI(currentArray, copyArray);
 
-                if (Status == 1) //结束游戏
-                {
-                    if (Level == 5)
-                    {
-                        Page clearPage = new ClearPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(clearPage);
-                    }
-                    else
-                    {
-                        Page passPage = new PassPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(passPage);
-                    }
-                }
+                PasstoNextPage();
+
             }
             else if (e.Key == Key.Down || e.Key == Key.S)
             {
@@ -102,19 +91,8 @@ namespace Sokoban
                 int Status = moveDown(currentArray);
                 UpdateGameUI(currentArray, copyArray);
 
-                if (Status == 1) //结束游戏
-                {
-                    if (Level == 5)
-                    {
-                        Page clearPage = new ClearPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(clearPage);
-                    }
-                    else
-                    {
-                        Page passPage = new PassPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(passPage);
-                    }
-                }
+                PasstoNextPage();
+
             }
             else if (e.Key == Key.Left || e.Key == Key.A)
             {
@@ -126,19 +104,7 @@ namespace Sokoban
                 int Status = moveLeft(currentArray);
                 UpdateGameUI(currentArray, copyArray);
 
-                if (Status == 1) //结束游戏
-                {
-                    if (Level == 5)
-                    {
-                        Page clearPage = new ClearPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(clearPage);
-                    }
-                    else
-                    {
-                        Page passPage = new PassPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(passPage);
-                    }
-                }
+                PasstoNextPage();
 
             }
             else if (e.Key == Key.Right || e.Key == Key.D)
@@ -148,22 +114,10 @@ namespace Sokoban
                 //保留老数组函数
                 Copy(copyArray, currentArray);
 
-                int Status = moveRight(currentArray);
+                Status = moveRight(currentArray);
                 UpdateGameUI(currentArray, copyArray);
 
-                if (Status == 1) //结束游戏
-                {
-                    if (Level == 5)
-                    {
-                        Page clearPage = new ClearPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(clearPage);
-                    }
-                    else
-                    {
-                        Page passPage = new PassPage(Level, Time, StepsCount);
-                        this.NavigationService.Navigate(passPage);
-                    }
-                }
+                PasstoNextPage();
 
             }
 
@@ -205,7 +159,8 @@ namespace Sokoban
 
         private void Back2Page_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Back2Page_Button_Click pressed.");
+            Page selectPage = new SelectPage();
+            this.NavigationService.Navigate(selectPage);
 
         }
 
@@ -239,6 +194,22 @@ namespace Sokoban
             for(int i = 0; i <  64; i++)
             {
                 copyArray[i] = currentArray[i];
+            }
+        }
+        public void PasstoNextPage()
+        {
+            if (Status == 1) //结束游戏
+            {
+                if (Level == 5)
+                {
+                    Page clearPage = new ClearPage(Level, Time, StepsCount);
+                    this.NavigationService.Navigate(clearPage);
+                }
+                else
+                {
+                    Page passPage = new PassPage(Level, Time, StepsCount);
+                    this.NavigationService.Navigate(passPage);
+                }
             }
         }
     }
