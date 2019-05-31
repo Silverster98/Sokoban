@@ -1,0 +1,5 @@
+EXPORTS	loadMap
+		moveUp
+		moveDown
+		moveLeft
+		moveRight
