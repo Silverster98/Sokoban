@@ -1,0 +1,215 @@
+﻿<Page x:Class="Sokoban.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sokoban"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GamePage"
+      PreviewKeyDown="Page_PreviewKeyDown">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid Name ="GameAreaGrid" Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Name="i0" Grid.Row="0" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i1" Grid.Row="0" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i2" Grid.Row="0" Grid.Column="2"
+                   Source="resource/wall.png"/>
+            <Image Name="i3" Grid.Row="0" Grid.Column="3"
+                   Source="resource/wall.png"/>
+            <Image Name="i4" Grid.Row="0" Grid.Column="4"
+                   Source="resource/wall.png"/>
+            <Image Name="i5" Grid.Row="0" Grid.Column="5"
+                   Source="resource/wall.png"/>
+            <Image Name="i6" Grid.Row="0" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Name="i7" Grid.Row="0" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+            <Image Name="i8" Grid.Row="1" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i9" Grid.Row="1" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i10" Grid.Row="1" Grid.Column="2"
+                   Source="resource/wall.png"/>
+            <Image Name="i11" Grid.Row="1" Grid.Column="3"
+                   Source="resource/road.png"/>
+            <Image Name="i12" Grid.Row="1" Grid.Column="4"
+                   Source="resource/road.png"/>
+            <Image Name="i13" Grid.Row="1" Grid.Column="5"
+                   Source="resource/wall.png"/>
+            <Image Name="i14" Grid.Row="1" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Name="i15" Grid.Row="1" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+            <Image Name="i16" Grid.Row="2" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i17" Grid.Row="2" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i18" Grid.Row="2" Grid.Column="2"
+                   Source="resource/wall.png"/>
+            <Image Name="i19" Grid.Row="2" Grid.Column="3"
+                   Source="resource/road.png"/>
+            <Image Name="i20" Grid.Row="2" Grid.Column="4"
+                   Source="resource/road.png"/>
+            <Image Name="i21" Grid.Row="2" Grid.Column="5"
+                   Source="resource/wall.png"/>
+            <Image Name="i22" Grid.Row="2" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Name="i23" Grid.Row="2" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+            <Image Name="i24" Grid.Row="3" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i25" Grid.Row="3" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i26" Grid.Row="3" Grid.Column="2"
+                   Source="resource/road.png"/>
+            <Image Name="i27" Grid.Row="3" Grid.Column="3"
+                   Source="resource/road.png"/>
+            <Image Name="i28" Grid.Row="3" Grid.Column="4"
+                   Source="resource/target.png"/>
+            <Image Name="i29" Grid.Row="3" Grid.Column="5"
+                   Source="resource/road.png"/>
+            <Image Name="i30" Grid.Row="3" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Name="i31" Grid.Row="3" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+            <Image Name="i32" Grid.Row="4" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i33" Grid.Row="4" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i34" Grid.Row="4" Grid.Column="2"
+                   Source="resource/road.png"/>
+            <Image Name="i35" Grid.Row="4" Grid.Column="3"
+                   Source="resource/people.png"/>
+            <Image Name="i36" Grid.Row="4" Grid.Column="4"
+                   Source="resource/road.png"/>
+            <Image Name="i37" Grid.Row="4" Grid.Column="5"
+                   Source="resource/road.png"/>
+            <Image Name="i38" Grid.Row="4" Grid.Column="6"
+                   Source="resource/road.png"/>
+            <Image Name="i39" Grid.Row="4" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+            <Image Name="i40" Grid.Row="5" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i41" Grid.Row="5" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i42" Grid.Row="5" Grid.Column="2"
+                   Source="resource/road.png"/>
+            <Image Name="i43" Grid.Row="5" Grid.Column="3"
+                   Source="resource/road.png"/>
+            <Image Name="i44" Grid.Row="5" Grid.Column="4"
+                   Source="resource/road.png"/>
+            <Image Name="i45" Grid.Row="5" Grid.Column="5"
+                   Source="resource/box.png"/>
+            <Image Name="i46" Grid.Row="5" Grid.Column="6"
+                   Source="resource/road.png"/>
+            <Image Name="i47" Grid.Row="5" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+            <Image Name="i48" Grid.Row="6" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i49" Grid.Row="6" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i50" Grid.Row="6" Grid.Column="2"
+                   Source="resource/wall.png"/>
+            <Image Name="i51" Grid.Row="6" Grid.Column="3"
+                   Source="resource/wall.png"/>
+            <Image Name="i52" Grid.Row="6" Grid.Column="4"
+                   Source="resource/wall.png"/>
+            <Image Name="i53" Grid.Row="6" Grid.Column="5"
+                   Source="resource/wall.png"/>
+            <Image Name="i54" Grid.Row="6" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Name="i55" Grid.Row="6" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+            <Image Name="i56" Grid.Row="7" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Name="i57" Grid.Row="7" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Name="i58" Grid.Row="7" Grid.Column="2"
+                   Source="resource/wall.png"/>
+            <Image Name="i59" Grid.Row="7" Grid.Column="3"
+                   Source="resource/wall.png"/>
+            <Image Name="i60" Grid.Row="7" Grid.Column="4"
+                   Source="resource/wall.png"/>
+            <Image Name="i61" Grid.Row="7" Grid.Column="5"
+                   Source="resource/wall.png"/>
+            <Image Name="i62" Grid.Row="7" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Name="i63" Grid.Row="7" Grid.Column="7"
+                   Source="resource/wall.png"/>
+
+
+
+
+
+
+
+        </Grid>
+        <!--image grid ends-->
+        <Canvas Grid.Row="1" Grid.Column="0">
+            <StackPanel Canvas.Left="53" Canvas.Top="71" Orientation="Horizontal">
+                <Image Source="resource/clock.png"/>
+                <TextBlock Text="Time: " FontWeight="Bold" FontSize="20" Height="27"/>
+                <TextBlock Name ="showTime" Text="" FontSize="20" Height="27"/>
+            </StackPanel>
+
+            <StackPanel Canvas.Left="53" Canvas.Top="177" Orientation="Horizontal">
+                <Image Source="resource/step.png"/>
+                <TextBlock Text="Steps: " FontWeight="Bold" FontSize="20" Height="27"/>
+                <TextBlock Name ="showSteps" Text="" FontSize="20" Height="27"/>
+            </StackPanel>
+        </Canvas>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Button Click="Start_Button_Click" Margin="20,69,20,181.333">
+                <TextBlock Text="Start or Restart" FontWeight="Bold" FontSize="20" Height="27"/>
+            </Button>
+            <Button Click="Back2Page_Button_Click" Margin="20,165,20,88.333">
+                <TextBlock Text=" Choose level" FontWeight="Bold" FontSize="20" Height="27"/>
+            </Button>
+        </Grid>
+
+
+    </Grid>
+</Page>

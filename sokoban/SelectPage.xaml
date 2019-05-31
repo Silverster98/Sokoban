@@ -1,0 +1,32 @@
+﻿<!-- 选择关卡页面-->
+<Page x:Class="Sokoban.SelectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sokoban"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SelectPage">
+
+    <Grid>
+        <Canvas>
+            <TextBlock Canvas.Left="187" Canvas.Top="125" FontWeight="Bold" FontSize="40" Text="SELECT CHECKPOINT" Width="426"/>
+        </Canvas>
+        <Button Click="Button_StartGame1_Click" x:Name="Button_1" Canvas.Bottom="55" Canvas.Right="100" Margin="0,262,658,102">
+            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">1ST ROUND</TextBlock>
+        </Button>
+        <Button Click="Button_StartGame2_Click" x:Name="Button_2" Canvas.Bottom="55" Canvas.Right="100" Margin="165,262,495,102">
+            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">2ND ROUND</TextBlock>
+        </Button>
+        <Button Click="Button_StartGame3_Click" x:Name="Button_3" Canvas.Bottom="55" Canvas.Right="100" Margin="330,262,330,102">
+            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">3RD ROUND</TextBlock>
+        </Button>
+        <Button Click="Button_StartGame4_Click" x:Name="Button_4" Canvas.Bottom="55" Canvas.Right="100" Margin="495,262,165,102">
+            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">4TH ROUND</TextBlock>
+        </Button>
+        <Button Click="Button_StartGame5_Click" x:Name="Button_5" Canvas.Bottom="55" Canvas.Right="100" Margin="660,262,0,102">
+            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">5TH ROUND</TextBlock>
+        </Button>
+    </Grid>
+</Page>
