@@ -10,16 +10,16 @@
       PreviewKeyDown="Page_PreviewKeyDown">
 
 
-    <Grid Background="#42586A">
+    <Grid Background="#FF42586A">
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="65"/>
             <RowDefinition Height="300"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="85"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <Grid Name ="GameAreaGrid" Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -187,26 +187,33 @@
 
         </Grid>
         <!--image grid ends-->
-        <Canvas Grid.Row="1" Grid.Column="0">
-            <StackPanel Canvas.Left="53" Canvas.Top="71" Orientation="Horizontal">
+
+        <Grid Grid.Row="1" Grid.Column="2">
+
+            <StackPanel Orientation="Horizontal" Margin="50,0,83,227">
+                <TextBlock Text="#Round" FontSize="46" FontFamily="MV Boli" FontWeight="Bold" Margin="0,0,0,0.333" Width="192"/>
+                <TextBlock Name="round_id" Text="X" FontSize="46" FontFamily="MV Boli" FontWeight="Bold" Margin="0,0,0,-0.667" Width="150"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="50" Margin="36,115,200,135">
                 <Image Source="resource/clock.png"/>
                 <TextBlock Text="Time: " FontWeight="Bold" FontSize="20" Height="27"/>
                 <TextBlock Name ="showTime" Text="" FontSize="20" Height="27"/>
             </StackPanel>
 
-            <StackPanel Canvas.Left="53" Canvas.Top="177" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Height="50" Margin="200,115,0,135">
                 <Image Source="resource/step.png"/>
                 <TextBlock Text="Steps: " FontWeight="Bold" FontSize="20" Height="27"/>
                 <TextBlock Name ="showSteps" Text="" FontSize="20" Height="27"/>
             </StackPanel>
-        </Canvas>
 
-        <Grid Grid.Row="1" Grid.Column="2">
-            <Button Click="Start_Button_Click" Margin="20,69,20,181.333">
+            <Button Background="#FF42586A" Click="Start_Button_Click" Margin="23,215,209,35" BorderBrush="#FF343D41">
                 <TextBlock Text="Start or Restart" FontWeight="Bold" FontSize="20" Height="27"/>
+                <!--<Image Source="resource/start.png"/>-->
             </Button>
-            <Button Click="Back2Page_Button_Click" Margin="20,165,20,88.333">
-                <TextBlock Text=" Choose level" FontWeight="Bold" FontSize="20" Height="27"/>
+            <Button Background="#42586A" Click="Back2Page_Button_Click" Margin="200,215,26,35" BorderBrush="#FF343D41">
+                <TextBlock FontWeight="Bold" FontSize="20" Height="27"><Run Text=" Choose "/><Run Text="Rounds"/></TextBlock>
+                <!--<Image Source="resource/more.png"/>-->
             </Button>
         </Grid>
 

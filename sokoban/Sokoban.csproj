@@ -159,9 +159,6 @@
     <Resource Include="resource\people.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resource\box.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="resource\road.png" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +169,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="asm_kernel\asm.dll" />
+    <Resource Include="resource\start.png" />
+    <Resource Include="resource\box.png" />
+    <Resource Include="resource\red_box.png" />
+    <Resource Include="resource\more.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

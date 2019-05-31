@@ -41,7 +41,9 @@ namespace Sokoban
         public int Level;
         public int Status;
         public int StepsCount;
-        public int Time = 0;
+        public int Time;
+
+        System.Windows.Threading.DispatcherTimer timer;
 
         // 新数组和老数组
         byte[] currentArray = new byte[64];
@@ -52,7 +54,7 @@ namespace Sokoban
             {98,"box.png"},
             {100, "target.png"},
             {101,"road.png"},
-            {111,"box.png"},
+            {111,"red_box.png"},
             {112,"people.png"},
             {116,"people.png"},
             {119,"wall.png"}
@@ -63,6 +65,10 @@ namespace Sokoban
             Level = level;
             InitializeComponent();
             InitGame(level);
+            //时钟实例
+            timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);   //间隔1秒
+            timer.Tick += new EventHandler(timer_Tick);
         }
         // 监听键盘输入
         private void Page_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -164,10 +170,12 @@ namespace Sokoban
 
         }
 
-        private void Start_Button_Click(object sender, RoutedEventArgs e)
+         private void Start_Button_Click(object sender, RoutedEventArgs e)
         {
             InitGame(Level);
             showSteps.Text = StepsCount.ToString();
+            showTime.Text = Time.ToString();
+            timer.Start();
         }
 
         public void AddStepsCount()
@@ -180,6 +188,9 @@ namespace Sokoban
         {
             Status = 0;
             StepsCount = 0;
+            Time = 0;
+
+            round_id.Text = level.ToString();
 
             loadMap(level - 1, currentArray);
 
@@ -211,6 +222,12 @@ namespace Sokoban
                     this.NavigationService.Navigate(passPage);
                 }
             }
+        }
+
+        public void timer_Tick(object sender, EventArgs e)
+        {
+            Time++;
+            showTime.Text = Time.ToString();
         }
     }
 }
