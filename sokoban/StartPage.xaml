@@ -9,16 +9,17 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StartPage">
     <Grid Background="#FF42586A">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="450"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width ="800"/>
         </Grid.ColumnDefinitions>
-        <Image Source="resource/BackgroundPicture.png" Margin="0,130,272,49"/>
-        <TextBlock FontWeight="Bold" FontSize="50" Margin="272,52,240,320"><Run Text="SOKOBAN"/><LineBreak/><Run/></TextBlock>
-        <Button Background="#FF42586A" Click="Button_Start_Click" x:Name="Button_StartGame" Margin="533,242,57,122">
-            <TextBlock FontWeight="Bold" FontSize="22">START GAME</TextBlock>
+        <Image Source="resource/BackgroundPicture.png" Margin="493,145,10,0"/>
+        <TextBlock FontWeight="Bold" FontSize="70" Margin="177,55,160,281" FontFamily="Monoton"><Run Text="SOKOBAN"/><LineBreak/><Run/></TextBlock>
+        <Button Background="#FF42586A" Click="Button_Start_Click" x:Name="Button_StartGame" Margin="302,274,322,120">
+            <TextBlock FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.736,0.25">START GAME</TextBlock>
         </Button>
     </Grid>
 </Page>
