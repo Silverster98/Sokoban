@@ -17,8 +17,8 @@
             <ColumnDefinition Width ="800"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row ="0" HorizontalAlignment="Right" Width="800">
-            <TextBlock FontWeight="Bold" FontSize="40" Text="NICE!!!" Margin="124,35,508,96" RenderTransformOrigin="1.122,0.528"/>
-            <TextBlock FontWeight="Bold" FontSize="40" Text="YOU PASSED THE ROUND" Width="621" Margin="124,95,55,27" RenderTransformOrigin="0.532,0.787"/>
+            <TextBlock FontWeight="Bold" FontSize="55" Text="NICE!!!" Margin="86,22,504,91" RenderTransformOrigin="1.122,0.528" FontFamily="MV Boli"/>
+            <TextBlock FontWeight="Bold" FontSize="40" Text="YOU PASSED THE ROUND" Width="621" Margin="142,95,37,27" RenderTransformOrigin="0.532,0.787" FontFamily="MV Boli"/>
         </Grid>
         <Grid Grid.Row ="1">
             <Grid>
@@ -32,10 +32,10 @@
                 <Grid Grid.Column="0">
                     <Image Source="resource/clock.png" Margin="107,26,255,200" RenderTransformOrigin="1.48,0.664"/>
                     <Image Source="resource/step.png" Margin="107,99,255,127"/>
-                    <TextBlock FontWeight="Bold" FontSize="28" Text="TIME:" Margin="150,26,147,200"/>
-                    <TextBlock FontWeight="Bold" FontSize="28" Text="STEP:" Margin="150,99,147,127"/>
-                    <TextBlock Height="38" Width="105" HorizontalAlignment="Left" Name="showTime" Text="{Binding}" VerticalAlignment="Top" FontSize="28" Margin="253,26,0,0"/>
-                    <TextBlock Height="38" Width="105" HorizontalAlignment="Left" Name="showStep" Text="{Binding}" VerticalAlignment="Top" FontSize="28" Margin="253,99,0,0"/>
+                    <TextBlock FontWeight="Bold" FontSize="20" Text="TIME:" Margin="150,32,147,207"/>
+                    <TextBlock FontWeight="Bold" FontSize="20" Text="STEP:" Margin="150,106,147,133"/>
+                    <TextBlock Height="25" Width="100" HorizontalAlignment="Left" Name="showTime" Text="{Binding}" VerticalAlignment="Top" FontSize="20" Margin="244,32,0,0"/>
+                    <TextBlock Height="25" Width="100" HorizontalAlignment="Left" Name="showStep" Text="{Binding}" VerticalAlignment="Top" FontSize="20" Margin="244,106,0,0"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -45,13 +45,13 @@
                         <ColumnDefinition Width="400"/>
                     </Grid.ColumnDefinitions>
                     <Button Background="#FF42586A" Click="Button_Regame_Click" x:Name="Button_Regame" Margin="92,26,134,192">
-                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="123" Text="PLAY AGAIN"/>
+                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="123" Text="PLAY AGAIN" FontFamily="MV Boli"/>
                     </Button>
                     <Button Background="#FF42586A" Click="Button_Select_Click" x:Name="Button_Select" Margin="0,128,134,90" HorizontalAlignment="Right" Width="174">
-                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="143">SELECT ROUND</TextBlock>
+                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="143" FontFamily="MV Boli">SELECT ROUND</TextBlock>
                     </Button>
                     <Button Background="#FF42586A" Click="Button_Next_Click" x:Name="Button_Next" Margin="92,77,134,141">
-                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="129">NEXT ROUND</TextBlock>
+                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="129" FontFamily="MV Boli">NEXT ROUND</TextBlock>
                     </Button>
                 </Grid>
             </Grid>

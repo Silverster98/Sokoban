@@ -11,30 +11,45 @@
 
     <Grid Background="#FF42586A">
         <Grid.RowDefinitions>
-            <RowDefinition Height="186"/>
-            <RowDefinition Height="264"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="310"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width ="800"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row ="0">
-            <TextBlock Canvas.Left="176" Canvas.Top="83" FontWeight="Bold" FontSize="40" Text="SELECT ROUND" Margin="245,68,213,37"/>
+            <TextBlock Canvas.Left="176" Canvas.Top="83" FontWeight="Bold" FontSize="40" Text="SELECT ROUND" Margin="236,42,222,36" FontFamily="MV Boli"/>
         </Grid>
         <Grid Grid.Row ="1">
-            <Button Background="#FF42586A" Click="Button_StartGame1_Click" x:Name="Button_1" Canvas.Bottom="55" Canvas.Right="100" Margin="20,140,640,60">
-                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">1ST ROUND</TextBlock>
+            <Button Background="#FF42586A" Click="Button_StartGame1_Click" x:Name="Button_1" Canvas.Bottom="55" Canvas.Right="100" Margin="20,10,640,101">
+                <Grid>
+                    <Image Source=" resource/Round1.png" Margin="11,11,11,69"/>
+                    <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Margin="24,151,24,10" RenderTransformOrigin="0.526,0.071" FontFamily="MV Boli"><Run Text="#"/><Run Text="R"/><Run Text="ound 1"/></TextBlock>
+                </Grid>
             </Button>
-            <Button Background="#FF42586A" Click="Button_StartGame2_Click" x:Name="Button_2" Canvas.Bottom="55" Canvas.Right="100" Margin="175,140,485,60">
-                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">2ND ROUND</TextBlock>
+            <Button Background="#FF42586A" Click="Button_StartGame2_Click" x:Name="Button_2" Canvas.Bottom="55" Canvas.Right="100" Margin="175,10,485,101">
+                <Grid>
+                    <Image Source=" resource/Round2.png" Margin="11,11,11,69"/>
+                    <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Margin="24,151,24,10" RenderTransformOrigin="0.526,0.071" FontFamily="MV Boli"><Run Text="#"/><Run Text="R"/><Run Text="ound "/><Run Text="2"/></TextBlock>
+                </Grid>
             </Button>
-            <Button Background="#FF42586A" Click="Button_StartGame3_Click" x:Name="Button_3" Canvas.Bottom="55" Canvas.Right="100" Margin="330,140,330,60">
-                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">3RD ROUND</TextBlock>
+            <Button Background="#FF42586A" Click="Button_StartGame3_Click" x:Name="Button_3" Canvas.Bottom="55" Canvas.Right="100" Margin="330,10,330,101">
+                <Grid>
+                    <Image Source=" resource/Round3.png" Margin="11,11,11,69"/>
+                    <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Margin="24,151,24,10" RenderTransformOrigin="0.526,0.071" FontFamily="MV Boli"><Run Text="#"/><Run Text="R"/><Run Text="ound "/><Run Text="3"/></TextBlock>
+                </Grid>
             </Button>
-            <Button Background="#FF42586A" Click="Button_StartGame4_Click" x:Name="Button_4" Canvas.Bottom="55" Canvas.Right="100" Margin="485,140,175,60">
-                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">4TH ROUND</TextBlock>
+            <Button Background="#FF42586A" Click="Button_StartGame4_Click" x:Name="Button_4" Canvas.Bottom="55" Canvas.Right="100" Margin="485,10,175,101">
+                <Grid>
+                    <Image Source=" resource/Round4.png" Margin="11,11,11,69"/>
+                    <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Margin="24,151,24,10" RenderTransformOrigin="0.526,0.071" FontFamily="MV Boli"><Run Text="#"/><Run Text="R"/><Run Text="ound "/><Run Text="4"/></TextBlock>
+                </Grid>
             </Button>
-            <Button Background="#FF42586A" Click="Button_StartGame5_Click" x:Name="Button_5" Canvas.Bottom="55" Canvas.Right="100" Margin="640,140,20,60">
-                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">5TH ROUND</TextBlock>
+            <Button Background="#FF42586A" Click="Button_StartGame5_Click" x:Name="Button_5" Canvas.Bottom="55" Canvas.Right="100" Margin="640,10,20,101">
+                <Grid>
+                    <Image Source=" resource/Round5.png" Margin="11,11,11,69"/>
+                    <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Margin="24,151,24,10" RenderTransformOrigin="0.526,0.071" FontFamily="MV Boli"><Run Text="#"/><Run Text="R"/><Run Text="ound "/><Run Text="5"/></TextBlock>
+                </Grid>
             </Button>
         </Grid>
     </Grid>
