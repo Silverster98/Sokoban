@@ -8,7 +8,6 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="GamePage"
       PreviewKeyDown="Page_PreviewKeyDown">
-
     <Grid Background="#FF42586A">
         <Grid.RowDefinitions>
             <RowDefinition Height="65"/>
@@ -41,7 +40,6 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
             <Image Name="i0" Grid.Row="0" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i1" Grid.Row="0" Grid.Column="1"
@@ -58,7 +56,6 @@
                    Source="resource/wall.png"/>
             <Image Name="i7" Grid.Row="0" Grid.Column="7"
                    Source="resource/wall.png"/>
-
             <Image Name="i8" Grid.Row="1" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i9" Grid.Row="1" Grid.Column="1"
@@ -75,7 +72,6 @@
                    Source="resource/wall.png"/>
             <Image Name="i15" Grid.Row="1" Grid.Column="7"
                    Source="resource/wall.png"/>
-
             <Image Name="i16" Grid.Row="2" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i17" Grid.Row="2" Grid.Column="1"
@@ -92,7 +88,6 @@
                    Source="resource/wall.png"/>
             <Image Name="i23" Grid.Row="2" Grid.Column="7"
                    Source="resource/wall.png"/>
-
             <Image Name="i24" Grid.Row="3" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i25" Grid.Row="3" Grid.Column="1"
@@ -109,7 +104,6 @@
                    Source="resource/wall.png"/>
             <Image Name="i31" Grid.Row="3" Grid.Column="7"
                    Source="resource/wall.png"/>
-
             <Image Name="i32" Grid.Row="4" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i33" Grid.Row="4" Grid.Column="1"
@@ -126,7 +120,6 @@
                    Source="resource/road.png"/>
             <Image Name="i39" Grid.Row="4" Grid.Column="7"
                    Source="resource/wall.png"/>
-
             <Image Name="i40" Grid.Row="5" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i41" Grid.Row="5" Grid.Column="1"
@@ -143,7 +136,6 @@
                    Source="resource/road.png"/>
             <Image Name="i47" Grid.Row="5" Grid.Column="7"
                    Source="resource/wall.png"/>
-
             <Image Name="i48" Grid.Row="6" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i49" Grid.Row="6" Grid.Column="1"
@@ -160,7 +152,6 @@
                    Source="resource/wall.png"/>
             <Image Name="i55" Grid.Row="6" Grid.Column="7"
                    Source="resource/wall.png"/>
-
             <Image Name="i56" Grid.Row="7" Grid.Column="0"
                    Source="resource/wall.png"/>
             <Image Name="i57" Grid.Row="7" Grid.Column="1"
@@ -177,35 +168,23 @@
                    Source="resource/wall.png"/>
             <Image Name="i63" Grid.Row="7" Grid.Column="7"
                    Source="resource/wall.png"/>
-
-
-
-
-
-
-
         </Grid>
         <!--image grid ends-->
-
         <Grid Grid.Row="1" Grid.Column="2">
-
             <StackPanel Orientation="Horizontal" Margin="50,0,83,227">
                 <TextBlock Text="#Round" FontSize="46" FontFamily="MV Boli" FontWeight="Bold" Margin="0,0,0,0.333" Width="192"/>
                 <TextBlock Name="round_id" Text="X" FontSize="46" FontFamily="MV Boli" FontWeight="Bold" Margin="0,0,0,-0.667" Width="150"/>
             </StackPanel>
-
             <StackPanel Orientation="Horizontal" Height="50" Margin="36,115,200,135">
                 <Image Source="resource/clock.png"/>
                 <TextBlock Text="Time: " FontWeight="Bold" FontSize="20" Height="27"/>
                 <TextBlock Name ="showTime" Text="" FontSize="20" Height="27"/>
             </StackPanel>
-
             <StackPanel Orientation="Horizontal" Height="50" Margin="200,115,0,135">
                 <Image Source="resource/step.png"/>
                 <TextBlock Text="Steps: " FontWeight="Bold" FontSize="20" Height="27"/>
                 <TextBlock Name ="showSteps" Text="" FontSize="20" Height="27"/>
             </StackPanel>
-
             <Button Background="#FF42586A" Click="Start_Button_Click" Margin="23,215,209,35" BorderBrush="#FF343D41">
                 <TextBlock Text="Start or Restart" FontWeight="Bold" FontSize="20" Height="27"/>
                 <!--<Image Source="resource/start.png"/>-->
@@ -215,7 +194,5 @@
                 <!--<Image Source="resource/more.png"/>-->
             </Button>
         </Grid>
-
-
     </Grid>
 </Page>

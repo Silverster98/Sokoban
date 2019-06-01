@@ -24,7 +24,5 @@
                 <TextBlock FontWeight="Bold" FontSize="22">START GAME</TextBlock>
             </Button>
         </Grid>
-
     </Grid>
-
 </Page>

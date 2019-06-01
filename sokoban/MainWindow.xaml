@@ -6,6 +6,6 @@
         xmlns:local="clr-namespace:Sokoban"
         mc:Ignorable="d"
         Icon="resource/box.png"
-        Title="The MainWindow of Sokoban (○｀ 3′○)" Height="450" Width="800"
+        Title="Sokoban" Height="450" Width="800"
         ShowsNavigationUI="False" Source="StartPage.xaml" WindowStartupLocation="CenterScreen">
 </NavigationWindow>
