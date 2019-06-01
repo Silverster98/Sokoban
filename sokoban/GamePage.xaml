@@ -9,7 +9,6 @@
       Title="GamePage"
       PreviewKeyDown="Page_PreviewKeyDown">
 
-
     <Grid Background="#FF42586A">
         <Grid.RowDefinitions>
             <RowDefinition Height="65"/>

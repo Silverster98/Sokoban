@@ -8,11 +8,23 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StartPage">
+    <Grid Background="#FF42586A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="186"/>
+            <RowDefinition Height="264"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width ="800"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row ="0">
+            <TextBlock FontWeight="Bold" FontSize="50" Margin="262,80,251,42"><Run Text="SOKOBAN"/><LineBreak/><Run/></TextBlock>
+        </Grid>
+        <Grid Grid.Row ="1">
+            <Button Background="#FF42586A" Click="Button_Start_Click" x:Name="Button_StartGame" Margin="295,106,295,80">
+                <TextBlock FontWeight="Bold" FontSize="22">START GAME</TextBlock>
+            </Button>
+        </Grid>
 
-    <Canvas>
-        <TextBlock Canvas.Left="223" Canvas.Top="125" FontWeight="Bold" FontSize="40" Text="SOKOBAN GAME" Width="357"/>
-        <Button Click="Button_Start_Click" x:Name="Button_StartGame" Canvas.Bottom="55" Canvas.Right="100">
-            <TextBlock FontWeight="Bold" FontSize="22" Padding="20,5" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Foreground="SeaGreen" >START GAME</TextBlock>
-        </Button>
-    </Canvas>
+    </Grid>
+
 </Page>
