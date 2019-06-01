@@ -8,20 +8,50 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ClearPage">
-    <Grid>
-        <Canvas>
-            <TextBlock Canvas.Left="169" Canvas.Top="75" FontWeight="Bold" FontSize="40" Text="NICE!!!" Width="369"/>
-            <TextBlock Canvas.Left="169" Canvas.Top="131" FontWeight="Bold" FontSize="40" Text="YOU PASSED ALL THE ROUND" Width="621"/>
-            <TextBlock Canvas.Left="123" Canvas.Top="239" FontWeight="Bold" FontSize="30" Text="TIME:" Width="144"/>
-            <TextBlock Canvas.Left="123" Canvas.Top="309" FontWeight="Bold" FontSize="30" Text="STEP:" Width="144"/>
-            <TextBlock Height="38" Width="105" HorizontalAlignment="Left" Name="showTime" Text="{Binding}" VerticalAlignment="Top" Canvas.Left="272" Canvas.Top="239" FontSize="40"/>
-            <TextBlock Height="38" Width="105" HorizontalAlignment="Left" Name="showStep" Text="{Binding}" VerticalAlignment="Top" Canvas.Left="272" Canvas.Top="309" FontSize="40"/>
-        </Canvas>
-        <Button Click="Button_Regame_Click" x:Name="Button_Regame" Canvas.Bottom="55" Canvas.Right="100" Margin="512,300,88,90">
-            <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="238">REGAME THE ROUND</TextBlock>
-        </Button>
-        <Button Click="Button_Select_Click" x:Name="Button_Select" Canvas.Bottom="55" Canvas.Right="100" Margin="512,380,88,10">
-            <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="143">SELECT ROUND</TextBlock>
-        </Button>
+    <Grid Background="#FF42586A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="186"/>
+            <RowDefinition Height="264"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width ="800"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row ="0" HorizontalAlignment="Right" Width="800">
+            <TextBlock FontWeight="Bold" FontSize="40" Text="NICE!!!" Margin="124,35,508,96"/>
+            <TextBlock FontWeight="Bold" FontSize="40" Text="YOU PASSED ALL THE ROUND" Width="621" Margin="93,95,86,27" RenderTransformOrigin="0.532,0.787"/>
+        </Grid>
+        <Grid Grid.Row ="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="264"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image Source="resource/clock.png" Margin="107,26,255,200" RenderTransformOrigin="1.48,0.664"/>
+                    <Image Source="resource/step.png" Margin="107,99,255,127"/>
+                    <TextBlock FontWeight="Bold" FontSize="28" Text="TIME:" Margin="150,26,147,200"/>
+                    <TextBlock FontWeight="Bold" FontSize="28" Text="STEP:" Margin="150,99,147,127"/>
+                    <TextBlock Height="38" Width="105" HorizontalAlignment="Left" Name="showTime" Text="{Binding}" VerticalAlignment="Top" FontSize="28" Margin="253,26,0,0"/>
+                    <TextBlock Height="38" Width="105" HorizontalAlignment="Left" Name="showStep" Text="{Binding}" VerticalAlignment="Top" FontSize="28" Margin="253,99,0,0"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="264"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="400"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Background="#FF42586A" Click="Button_Regame_Click" x:Name="Button_Regame" Margin="92,26,134,176">
+                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="123" Text="PLAY AGAIN"/>
+                    </Button>
+                    <Button Background="#FF42586A" Click="Button_Select_Click" x:Name="Button_Select" Margin="0,93,134,109" HorizontalAlignment="Right" Width="174">
+                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="143">SELECT ROUND</TextBlock>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

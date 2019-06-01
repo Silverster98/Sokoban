@@ -9,24 +9,33 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SelectPage">
 
-    <Grid>
-        <Canvas>
-            <TextBlock Canvas.Left="187" Canvas.Top="125" FontWeight="Bold" FontSize="40" Text="SELECT CHECKPOINT" Width="426"/>
-        </Canvas>
-        <Button Click="Button_StartGame1_Click" x:Name="Button_1" Canvas.Bottom="55" Canvas.Right="100" Margin="0,262,658,102">
-            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">1ST ROUND</TextBlock>
-        </Button>
-        <Button Click="Button_StartGame2_Click" x:Name="Button_2" Canvas.Bottom="55" Canvas.Right="100" Margin="165,262,495,102">
-            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">2ND ROUND</TextBlock>
-        </Button>
-        <Button Click="Button_StartGame3_Click" x:Name="Button_3" Canvas.Bottom="55" Canvas.Right="100" Margin="330,262,330,102">
-            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">3RD ROUND</TextBlock>
-        </Button>
-        <Button Click="Button_StartGame4_Click" x:Name="Button_4" Canvas.Bottom="55" Canvas.Right="100" Margin="495,262,165,102">
-            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">4TH ROUND</TextBlock>
-        </Button>
-        <Button Click="Button_StartGame5_Click" x:Name="Button_5" Canvas.Bottom="55" Canvas.Right="100" Margin="660,262,0,102">
-            <TextBlock FontWeight="Bold" FontSize="21" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="140">5TH ROUND</TextBlock>
-        </Button>
+    <Grid Background="#FF42586A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="186"/>
+            <RowDefinition Height="264"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width ="800"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row ="0">
+            <TextBlock Canvas.Left="176" Canvas.Top="83" FontWeight="Bold" FontSize="40" Text="SELECT ROUND" Margin="245,68,213,37"/>
+        </Grid>
+        <Grid Grid.Row ="1">
+            <Button Background="#FF42586A" Click="Button_StartGame1_Click" x:Name="Button_1" Canvas.Bottom="55" Canvas.Right="100" Margin="20,140,640,60">
+                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">1ST ROUND</TextBlock>
+            </Button>
+            <Button Background="#FF42586A" Click="Button_StartGame2_Click" x:Name="Button_2" Canvas.Bottom="55" Canvas.Right="100" Margin="175,140,485,60">
+                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">2ND ROUND</TextBlock>
+            </Button>
+            <Button Background="#FF42586A" Click="Button_StartGame3_Click" x:Name="Button_3" Canvas.Bottom="55" Canvas.Right="100" Margin="330,140,330,60">
+                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">3RD ROUND</TextBlock>
+            </Button>
+            <Button Background="#FF42586A" Click="Button_StartGame4_Click" x:Name="Button_4" Canvas.Bottom="55" Canvas.Right="100" Margin="485,140,175,60">
+                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">4TH ROUND</TextBlock>
+            </Button>
+            <Button Background="#FF42586A" Click="Button_StartGame5_Click" x:Name="Button_5" Canvas.Bottom="55" Canvas.Right="100" Margin="640,140,20,60">
+                <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="115">5TH ROUND</TextBlock>
+            </Button>
+        </Grid>
     </Grid>
 </Page>
