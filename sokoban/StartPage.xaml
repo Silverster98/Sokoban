@@ -16,10 +16,70 @@
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width ="800"/>
         </Grid.ColumnDefinitions>
-        <Image Source="resource/BackgroundPicture.png" Margin="493,145,10,0"/>
-        <TextBlock FontWeight="Bold" FontSize="70" Margin="177,55,160,281" FontFamily="Monoton"><Run Text="SOKOBAN"/><LineBreak/><Run/></TextBlock>
-        <Button Background="#FF42586A" Click="Button_Start_Click" x:Name="Button_StartGame" Margin="302,274,322,120">
-            <TextBlock FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.736,0.25">START GAME</TextBlock>
+
+        <Grid Height="150" Width="350" Margin="225,170,225,130" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="0" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="0" Grid.Column="2"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="0" Grid.Column="3"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="0" Grid.Column="4"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="0" Grid.Column="5"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="0" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="1" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="1" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="2" Grid.Column="0"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="2" Grid.Column="1"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="2" Grid.Column="2"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="2" Grid.Column="3"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="2" Grid.Column="4"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="2" Grid.Column="5"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="2" Grid.Column="6"
+                   Source="resource/wall.png"/>
+            <Image Grid.Row="1" Grid.Column="1"
+                   Source="resource/road.png"/>
+            <Image Grid.Row="1" Grid.Column="2"
+                   Source="resource/people_right.png"/>
+            <Image Grid.Row="1" Grid.Column="3"
+                   Source="resource/box.png"/>
+            <Image Grid.Row="1" Grid.Column="4"
+                   Source="resource/target.png"/>
+            <Image Grid.Row="1" Grid.Column="5"
+                   Source="resource/road.png"/>        </Grid>
+
+        <TextBlock FontWeight="Bold" FontSize="70" Margin="153,56,153,304" FontFamily="MV Boli"><Run Text="Game "/><Run Text="Sokoban"/></TextBlock>
+
+        <Button Background="#FF42586A" Click="Button_Start_Click" x:Name="Button_StartGame" Margin="312,331,312,63">
+            <TextBlock FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.736,0.25" Text="Game Now" FontFamily="MV Boli"></TextBlock>
         </Button>
     </Grid>
 </Page>

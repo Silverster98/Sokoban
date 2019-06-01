@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="asm_kernel\asm.dll" />
+    <Resource Include="resource\people_right.png" />
     <Resource Include="resource\Round1.png" />
     <Resource Include="resource\Round2.png" />
     <Resource Include="resource\Round3.png" />
