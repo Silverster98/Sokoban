@@ -74,7 +74,8 @@
             <Image Grid.Row="1" Grid.Column="4"
                    Source="resource/target.png"/>
             <Image Grid.Row="1" Grid.Column="5"
-                   Source="resource/road.png"/>        </Grid>
+                   Source="resource/road.png"/>  
+        </Grid>
 
         <TextBlock FontWeight="Bold" FontSize="70" Margin="153,56,153,304" FontFamily="MV Boli"><Run Text="Game "/><Run Text="Sokoban"/></TextBlock>
 

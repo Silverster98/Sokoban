@@ -30,26 +30,126 @@
                     <ColumnDefinition Width="400"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Image Source="resource/clock.png" Margin="107,26,255,200" RenderTransformOrigin="1.48,0.664"/>
+                    <Image Source="resource/clock.png" Margin="107,27,255,199" RenderTransformOrigin="1.48,0.664"/>
                     <Image Source="resource/step.png" Margin="107,99,255,127"/>
                     <TextBlock FontWeight="Bold" FontSize="20" Text="TIME:" Margin="150,32,147,207"/>
                     <TextBlock FontWeight="Bold" FontSize="20" Text="STEP:" Margin="150,106,147,133"/>
                     <TextBlock Height="25" Width="100" HorizontalAlignment="Left" Name="showTime" Text="{Binding}" VerticalAlignment="Top" FontSize="20" Margin="244,32,0,0"/>
                     <TextBlock Height="25" Width="100" HorizontalAlignment="Left" Name="showStep" Text="{Binding}" VerticalAlignment="Top" FontSize="20" Margin="244,106,0,0"/>
-                </Grid>
-                <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="264"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="400"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Background="#FF42586A" Click="Button_Regame_Click" x:Name="Button_Regame" Margin="92,26,134,176" FontFamily="MV Boli">
+                    <Button Background="#FF42586A" Click="Button_Regame_Click" x:Name="Button_Regame" Margin="10,159,216,43" FontFamily="MV Boli">
                         <TextBlock FontWeight="Bold" FontSize="20" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="134" Text="PLAY AGAIN"/>
                     </Button>
-                    <Button Background="#FF42586A" Click="Button_Select_Click" x:Name="Button_Select" Margin="0,93,134,109" HorizontalAlignment="Right" Width="174" FontFamily="MV Boli">
+                    <Button Background="#FF42586A" Click="Button_Select_Click" x:Name="Button_Select" Margin="0,159,10,43" HorizontalAlignment="Right" Width="174" FontFamily="MV Boli">
                         <TextBlock FontWeight="Bold" FontSize="20" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="164">SELECT ROUND</TextBlock>
                     </Button>
+                </Grid>
+                <Grid Grid.Column="1" Width="150" Height="210" Margin="125,10,125,44">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width ="*"/>
+                        <ColumnDefinition Width ="*"/>
+                        <ColumnDefinition Width ="*"/>
+                        <ColumnDefinition Width ="*"/>
+                        <ColumnDefinition Width ="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Grid.Column="0"
+                   Source="resource/target.png"/>
+                    <Image Grid.Row="0" Grid.Column="1"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="0" Grid.Column="2"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="0" Grid.Column="3"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="0" Grid.Column="4"
+                   Source="resource/target.png"/>
+                    
+                    <Image Grid.Row="1" Grid.Column="0"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="1" Grid.Column="1"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="1" Grid.Column="2"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="1" Grid.Column="3"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="1" Grid.Column="4"
+                   Source="resource/road.png"/>
+
+                    <Image Grid.Row="2" Grid.Column="0"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="2" Grid.Column="1"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="2" Grid.Column="2"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="2" Grid.Column="3"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="2" Grid.Column="4"
+                   Source="resource/road.png"/>
+
+                    <Image Grid.Row="3" Grid.Column="0"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="3" Grid.Column="1"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="3" Grid.Column="2"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="3" Grid.Column="3"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="3" Grid.Column="4"
+                   Source="resource/road.png"/>
+
+                    <Image Grid.Row="1" Grid.Column="0"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="1" Grid.Column="1"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="1" Grid.Column="2"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="1" Grid.Column="3"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="1" Grid.Column="4"
+                   Source="resource/road.png"/>
+
+
+                    <Image Grid.Row="4" Grid.Column="0"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="4" Grid.Column="1"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="4" Grid.Column="2"
+                   Source="resource/people_right.png"/>
+                    <Image Grid.Row="4" Grid.Column="3"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="4" Grid.Column="4"
+                   Source="resource/road.png"/>
+
+                    <Image Grid.Row="5" Grid.Column="0"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="5" Grid.Column="1"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="5" Grid.Column="2"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="5" Grid.Column="3"
+                   Source="resource/wall.png"/>
+                    <Image Grid.Row="5" Grid.Column="4"
+                   Source="resource/road.png"/>
+
+                    <Image Grid.Row="6" Grid.Column="0"
+                   Source="resource/target.png"/>
+                    <Image Grid.Row="6" Grid.Column="1"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="6" Grid.Column="2"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="6" Grid.Column="3"
+                   Source="resource/road.png"/>
+                    <Image Grid.Row="6" Grid.Column="4"
+                   Source="resource/target.png"/>
+
+
                 </Grid>
             </Grid>
         </Grid>

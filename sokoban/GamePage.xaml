@@ -186,7 +186,7 @@
                 <TextBlock Name ="showSteps" Text="" FontSize="20" Height="27"/>
             </StackPanel>
             <Button Background="#FF42586A" Click="Start_Button_Click" Margin="23,215,209,35" BorderBrush="#FF343D41">
-                <TextBlock FontWeight="Bold" FontSize="20" Height="27" FontFamily="MV Boli" Width="144"><Run Text="Play"/><Run Text=" or "/><Run Text="Replay"/></TextBlock>
+                <TextBlock FontWeight="Bold" FontSize="20" Height="27" FontFamily="MV Boli" Width="152"><Run Text="Play"/><Run Text=" or "/><Run Text="Re"/><Run Text="start"/></TextBlock>
                 <!--<Image Source="resource/start.png"/>-->
             </Button>
             <Button Background="#42586A" Click="Back2Page_Button_Click" Margin="200,215,26,35" BorderBrush="#FF343D41">
