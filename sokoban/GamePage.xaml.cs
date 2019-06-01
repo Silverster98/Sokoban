@@ -126,7 +126,13 @@ namespace Sokoban
                 PasstoNextPage();
 
             }
-
+            else if (e.Key == Key.R)
+            {
+                InitGame(Level);
+                showSteps.Text = StepsCount.ToString();
+                showTime.Text = Time.ToString();
+                timer.Start();
+            }
         }
 
 

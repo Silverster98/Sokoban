@@ -17,8 +17,8 @@
             <ColumnDefinition Width ="800"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row ="0" HorizontalAlignment="Right" Width="800">
-            <TextBlock FontWeight="Bold" FontSize="40" Text="NICE!!!" Margin="124,35,508,96"/>
-            <TextBlock FontWeight="Bold" FontSize="40" Text="YOU PASSED ALL THE ROUND" Width="621" Margin="93,95,86,27" RenderTransformOrigin="0.532,0.787"/>
+            <TextBlock FontWeight="Bold" FontSize="40" Margin="186,35,160,96"><Run Text="🎉"/><Run Text="Congratulations!"/><Run Text="🎉"/></TextBlock>
+            <TextBlock FontWeight="Bold" FontSize="40" Width="621" Margin="128,112,51,10" RenderTransformOrigin="0.532,0.787"><Run Text="YOU PASSED ALL ROUND"/><Run Text="S"/></TextBlock>
         </Grid>
         <Grid Grid.Row ="1">
             <Grid>
