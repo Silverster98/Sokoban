@@ -48,7 +48,7 @@
                         <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="123" Text="PLAY AGAIN" FontFamily="MV Boli"/>
                     </Button>
                     <Button Background="#FF42586A" Click="Button_Select_Click" x:Name="Button_Select" Margin="0,128,134,90" HorizontalAlignment="Right" Width="174">
-                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="143" FontFamily="MV Boli">SELECT ROUND</TextBlock>
+                        <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="149" FontFamily="MV Boli">SELECT ROUND</TextBlock>
                     </Button>
                     <Button Background="#FF42586A" Click="Button_Next_Click" x:Name="Button_Next" Margin="92,77,134,141">
                         <TextBlock FontWeight="Bold" FontSize="18" UseLayoutRounding="True" ScrollViewer.CanContentScroll="True" Width="129" FontFamily="MV Boli">NEXT ROUND</TextBlock>
