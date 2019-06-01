@@ -78,8 +78,8 @@
 
         <TextBlock FontWeight="Bold" FontSize="70" Margin="153,56,153,304" FontFamily="MV Boli"><Run Text="Game "/><Run Text="Sokoban"/></TextBlock>
 
-        <Button Background="#FF42586A" Click="Button_Start_Click" x:Name="Button_StartGame" Margin="312,331,312,63">
-            <TextBlock FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.736,0.25" Text="Game Now" FontFamily="MV Boli"></TextBlock>
+        <Button Background="#FF42586A" Click="Button_Start_Click" x:Name="Button_StartGame" Margin="330,331,330,63">
+            <TextBlock FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.736,0.25" Text="PLAY" ></TextBlock>
         </Button>
     </Grid>
 </Page>
