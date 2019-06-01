@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="asm_kernel\asm.dll" />
+    <Resource Include="resource\BackgroundPicture.png" />
     <Resource Include="resource\start.png" />
     <Resource Include="resource\box.png" />
     <Resource Include="resource\red_box.png" />
