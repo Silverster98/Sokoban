@@ -3,13 +3,14 @@
 option casemap:none
 
 include windows.inc
+include kernel32.inc
+includelib kernel32.lib
 
 .data 
 map_w equ 8
-map_h equ 8	
-FILESTR		DB      'map.txt',0
-HANDLE		DW      0
-maps		DB      320 DUP(0)
+map_h equ 8
+filename db '.\map.txt',0
+mapF sbyte 331 dup(0)
 
 .code
 DllEntry proc _hInstance,_dwReason,_dwReserved
@@ -20,41 +21,33 @@ DllEntry proc _hInstance,_dwReason,_dwReserved
 DllEntry endp
 
 loadMap  proc C count:sdword, now:ptr sbyte
-    push ebx
+    local hFile:HANDLE
+	push ebx
+    
+    invoke CreateFile, offset filename, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL
+	mov hFile, eax
+	invoke ReadFile, hFile, addr mapF, 331, NULL, NULL
+	invoke CloseHandle, hFile
 
-    mov ah, 3DH			;打开文件
-	lea dx, FILESTR
-	int 21H
-	MOV HANDLE, ax
-
-	lea dx, maps			;读文件
-	mov bx, HANDLE
-	mov cx, 320
-	mov ah, 3FH
-	int 21H
-
-	mov ah, 3EH			;关闭文件
-	mov bx, HANDLE
-	int 21H
-
-    xor eax, eax
-    mov ax, map_w*map_h
-    mul count
-    mov ebx, eax
-
-    mov ecx, 0
-loadele:
-    mov eax, 0
-    mov al, maps[ebx]
-	mov	edx, ecx
-	add	edx, now
-    mov [edx], al
-    inc ebx
+	mov eax, count
+	mov bl, 66
+	mul bl
+	add eax, offset mapF
+	mov ebx, eax
+	xor eax, eax
+	
+	mov ecx, 0
+copyChar:
+	mov al, [ebx]
+	mov edx, now
+	add edx, ecx
+	mov [edx], al
+	inc ebx
     inc ecx
     cmp ecx, map_w*map_h
-    jne loadele
+    jne copyChar
 
-    pop ebx
+	pop ebx
     ret
 loadMap     endp
 
