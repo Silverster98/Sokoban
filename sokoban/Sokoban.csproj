@@ -168,7 +168,6 @@
     <Resource Include="resource\target.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="asm_kernel\asm.dll" />
     <Resource Include="resource\people_right.png" />
     <Resource Include="resource\Round1.png" />
     <Resource Include="resource\Round2.png" />
@@ -180,6 +179,9 @@
     <Resource Include="resource\box.png" />
     <Resource Include="resource\red_box.png" />
     <Resource Include="resource\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="asm_kernel\kernelASM.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
