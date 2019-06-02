@@ -6,13 +6,10 @@ include windows.inc
 
 .data 
 map_w equ 8
-map_h equ 8
-maps sbyte  'eeeeeeeeewwwwwweeweeedweewewbeweewpeeeweeweeeeweewwwwwweeeeeeeee',\
-            'wwwwwwwwweeeeeewwdeeedewwbepebewweeeewwwwdebeweeweeeeweewwwwwwee',\
-			'eeeeeeeeeeewwwwwwwwwpeewweebodewweeeeewwweewwwwwwwwweeeeeeeeeeee',\
-			'wwwwwwwwweeweeewwebbodewwedeedewwedobbpwweeeweewwwwwwwwweeeeeeee',\
-			'ewwwwweewwweewweweebeewwwpwbwewwwedbdedwwwweeeewewweewwweewwwwwe',0
-
+map_h equ 8	
+FILESTR		DB      'map.txt',0
+HANDLE		DW      0
+maps		DB      320 DUP(0)
 
 .code
 DllEntry proc _hInstance,_dwReason,_dwReserved
@@ -24,7 +21,22 @@ DllEntry endp
 
 loadMap  proc C count:sdword, now:ptr sbyte
     push ebx
-    
+
+    mov ah, 3DH			;打开文件
+	lea dx, FILESTR
+	int 21H
+	MOV HANDLE, ax
+
+	lea dx, maps			;读文件
+	mov bx, HANDLE
+	mov cx, 320
+	mov ah, 3FH
+	int 21H
+
+	mov ah, 3EH			;关闭文件
+	mov bx, HANDLE
+	int 21H
+
     xor eax, eax
     mov ax, map_w*map_h
     mul count
