@@ -9,10 +9,11 @@ includelib kernel32.lib
 .data 
 map_w equ 8
 map_h equ 8
-filename db '.\map.txt',0
-mapF sbyte 331 dup(0)
+filename db '.\map.txt',0      	;# 保存map.txt路径
+mapF sbyte 331 dup(0)          	;# 保存从map.txt中读取到的数据
 
 .code
+;# dll entry function
 DllEntry proc _hInstance,_dwReason,_dwReserved
 	
 	mov eax, 1
@@ -20,16 +21,19 @@ DllEntry proc _hInstance,_dwReason,_dwReserved
 
 DllEntry endp
 
+;# load map function
+;# @count is the number of level
+;# @now is the map ptr that hold the level map
 loadMap  proc C count:sdword, now:ptr sbyte
     local hFile:HANDLE
 	push ebx
     
     invoke CreateFile, offset filename, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL
 	mov hFile, eax
-	invoke ReadFile, hFile, addr mapF, 331, NULL, NULL
+	invoke ReadFile, hFile, addr mapF, 331, NULL, NULL       ;# 读取文件到mapF数组
 	invoke CloseHandle, hFile
 
-	mov eax, count
+	mov eax, count             	;# 以下代码开始复制相应关卡到now数组
 	mov bl, 66
 	mul bl
 	add eax, offset mapF
@@ -45,27 +49,30 @@ copyChar:
 	inc ebx
     inc ecx
     cmp ecx, map_w*map_h
-    jne copyChar
+    jne copyChar              	;# 总共复制8*8个字符
 
 	pop ebx
     ret
 loadMap     endp
 
 ;# get person position
+;# @now is the map
+;# @posx is the person pos's x
+;# @posy is the person pos's y
 getPerPos proc C now: ptr sbyte, posx: ptr sdword, posy: ptr sdword
     push ebx
             
     mov ebx, now
 next_ele:   
     mov al, [ebx]
-    cmp al, 112 ;# 112 is 'p'
+    cmp al, 112 			  	;# 112 is 'p'
     jz findPer
-	cmp al, 116 ;# 116 is 't'
+	cmp al, 116 				;# 116 is 't'
     jz findPer
     inc ebx
     jmp next_ele
 
-findPer:    
+findPer:    					;# 以下代码是将找到的坐标转换为为二维坐标，然后将其赋值给posx,posy
     sub ebx, now
     mov eax, ebx
     mov bl, map_w
@@ -87,12 +94,14 @@ findPer:
 	ret
 getPerPos   endp
 
+;# judge is success
+;# @now is the map
 isSuccess proc C now:ptr sbyte
 	push ebx
 	
 	mov ebx, now
 	mov ecx, 0
-checkNext:
+checkNext:						;# 依次判断map中是否还有b字符，若无b字符则成功
 	mov al, [ebx]
 	cmp al, 98
 	jz notSuccess
@@ -109,12 +118,14 @@ endCheck:
 	ret
 isSuccess   endp
 
+;# move up function
+;# @now is map
 moveUp proc C now:ptr sbyte
     local posX, posY:dword
 	push ebx
-	invoke getPerPos, now, addr posX, addr posY
+	invoke getPerPos, now, addr posX, addr posY	;# 首先获取当前人的位置，根据人的位置来做相关判断
 
-	mov bl, map_w
+	mov bl, map_w				;# 获取人上方元素
 	mov eax, posX
 	sub eax, 1
 	mul bl
@@ -125,11 +136,11 @@ moveUp proc C now:ptr sbyte
 	mov al, [edx]
 
 
-	cmp al, 119 ;# 119 is 'w'
-	jz upEnd ;# up is p_w, end
+	cmp al, 119 				;# 119 is 'w'
+	jz upEnd 					;# 上方是墙终止
 
-	cmp al, 98  ;# 98 is 'b'
-	jnz upnext1
+	cmp al, 98  				;# 98 is 'b'，上方是箱子
+	jnz upnext1					;# 不为 'b' 进入下一个判断
 		mov bl, map_w
 		mov eax, posX
 		sub eax, 2
@@ -139,13 +150,13 @@ moveUp proc C now:ptr sbyte
 		add edx, eax
 		xor eax, eax
 		mov al, [edx]
-		cmp al, 119 ;# 119 is 'w'
-		jz bEnd ;# up is p_b_w, end
-		cmp al, 98  ;# 98 is 'b'
-		jz bEnd ;# up is p_b_b, end
-		cmp al, 111 ;# 111 is 'o'
-		jz bEnd ;# up is p_b_o, end
-		cmp al, 101 ;# 101 is 'e'
+		cmp al, 119 			;# 当人上方是箱子时，再判断上上方的元素
+		jz bEnd 				;# up is p_b_w, end
+		cmp al, 98 
+		jz bEnd 				;# up is p_b_b, end
+		cmp al, 111 			;# 111 is 'o'
+		jz bEnd 				;# up is p_b_o, end
+		cmp al, 101 			;# 101 is 'e'
 		jnz upnext01
 			mov al, 98
 			mov [edx], al
@@ -164,7 +175,7 @@ up_t_b_e0:
 			mov [edx], al
 			jmp bEnd
 upnext01:
-		cmp al, 100 ;# 100 is 'd'
+		cmp al, 100
 		jnz bEnd
 			mov al, 111
 			mov [edx], al
@@ -185,8 +196,8 @@ up_t_b_e1:
 bEnd:
 	jmp upEnd
 
-upnext1:
-	cmp al, 101 ;# 101 is 'e'
+upnext1:						;# 上方是 e 即是空地
+	cmp al, 101 				;# 101 is 'e'
 	jnz upnext2
 	mov al, 112
 	mov [edx], al
@@ -204,8 +215,8 @@ up_t_e:
 eEnd:
 	jmp upEnd
 
-upnext2:
-	cmp al, 100 ;# 100 is 'd'
+upnext2:						;# 上方是 d 即是目标点
+	cmp al, 100 				;# 100 is 'd'
 	jnz upnext3
 	mov al, 116
 	mov [edx], al
@@ -223,10 +234,10 @@ up_t_d:
 dEnd:
 	jmp upEnd
 
-upnext3:
-	cmp al, 111 ;# 111 is 'o'
+upnext3:						;# 上方是 o 即箱子和目标点
+	cmp al, 111 				;# 111 is 'o'
 	jnz upEnd
-		mov bl, map_w ;# up is p_o
+		mov bl, map_w
 		mov eax, posX
 		sub eax, 2
 		mul bl
@@ -235,16 +246,16 @@ upnext3:
 		add edx, eax
 		xor eax, eax
 		mov al, [edx]
-		cmp al, 119 ;# 119 is 'w'
-		jz oEnd ;# up is p_b_w, end
-		cmp al, 98  ;# 98 is 'b'
-		jz oEnd ;# up is p_b_b, end
-		cmp al, 111 ;# 111 is 'o'
-		jz oEnd ;# up is p_b_o, end
-		cmp al, 101 ;# 101 is 'e'
+		cmp al, 119
+		jz oEnd
+		cmp al, 98
+		jz oEnd
+		cmp al, 111
+		jz oEnd
+		cmp al, 101
 		jnz upnext31
 			mov al, 98
-			mov [edx], al ;# up is p_o_e,
+			mov [edx], al
 			add edx, map_w
 			mov al, 116
 			mov [edx], al
@@ -260,10 +271,10 @@ up_t_o_e0:
 			mov [edx], al
 			jmp oEnd
 upnext31:
-		cmp al, 100 ;# 100 is 'd'
+		cmp al, 100
 		jnz oEnd
 			mov al, 111
-			mov [edx], al ;# 111 is 'o'
+			mov [edx], al
 			add edx, map_w
 			mov al, 116
 			mov [edx], al
@@ -283,7 +294,7 @@ oEnd:
 
 upEnd:
 	nop
-	invoke isSuccess, now
+	invoke isSuccess, now		;# 调用判断是否成功函数来判断是否成功，成功则返回eax=1,未成功返回eax=0
 	;mov ebx, eax
 	;invoke printf, offset printInt, ebx 
 	pop ebx
